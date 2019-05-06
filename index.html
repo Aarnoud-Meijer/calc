@@ -8,9 +8,22 @@
 	<script type="text/javascript">
 		// $(document).ready(function(){
 		$(function(){
-			$("input").click(function(){
+			var calc = "";
+			
+			$("input[type='button']").click(function(){
 				console.log(this.value);
+				calc += this.value;
+				$("div#total").html(calc);
 			});
+
+			// input[type="submit"] 
+			$('input[type="submit"]').click(function(){
+				console.log(eval(calc));
+				// eval using
+				calc = eval(calc);
+				$("div#total").html(calc);
+			});
+
 
 		});
 	</script>
@@ -20,12 +33,16 @@
 	<article>
 		num 1 - 9 + 0
 		[-] [+]
+		<div id="total"></div>
 		<input type="button" value="1"></button>
 		<input type="button" value="2"></button>
+		<input type="button" value="3"></button>
+		<input type="button" value="4"></button>
+		<input type="button" value="99"></button>
 		
 		<input type="button" value="-"></button>
 		<input type="button" value="+"></button>
-		<input type="button" value="="></button>
+		<input type="submit" value="="></button>
 	</article>
 	<footer></footer>
 </body>
