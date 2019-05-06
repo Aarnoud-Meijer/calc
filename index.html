@@ -5,62 +5,7 @@
 	<title>Calculator</title>
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all">
 	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript">
-		// $(document).ready(function(){
-		$(function(){
-			var calc = "";
-
-			$("input[type='button']").click(function(){
-				// console.log(this.value);
-				if(this.value=="clear"){
-					calc ="";
-					$("div#total").html(calc);
-				}else{
-
-					calc += this.value;
-					$("div#total").html(calc);
-				}
-			});
-
-			$('input[type="submit"]').click(function(){
-				// console.log(eval(calc));
-				// eval using
-				
-				//if(this.value=="="){
-					calc = eval(calc);
-					$("div#total").html(eval(calc));
-				//}
-			});
-
-		});
-
-		
-	</script>
-	<style>
-		#total{
-			height:1.5em;
-			border: 1px solid #777;
-			background-color:#fff;
-			margin:.5em;
-		}
-
-		input{
-			margin:.25em;
-		}
-
-		article{
-			background-color:#eee;
-			margin-left: auto;
-			margin-right: auto;
-			margin-top:50px;
-			width:160px;
-			border: 1px solid #aaa;
-		}
-
-		input[type='button']{
-			
-		}
-	</style>
+	<script type="text/javascript" src="js/calc.js"></script>
 </head>
 <body>
 	<header></header>
