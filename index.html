@@ -12,23 +12,36 @@
 
 			$("input[type='button']").click(function(){
 				// console.log(this.value);
-				calc += this.value;
-				$("div#total").html(calc);
+				if(this.value=="clear"){
+					calc ="";
+					$("div#total").html(calc);
+				}else{
+
+					calc += this.value;
+					$("div#total").html(calc);
+				}
 			});
 
 			$('input[type="submit"]').click(function(){
 				// console.log(eval(calc));
 				// eval using
-				calc = eval(calc);
-				$("div#total").html(eval(calc));
+				
+				//if(this.value=="="){
+					calc = eval(calc);
+					$("div#total").html(eval(calc));
+				//}
 			});
 
 		});
+
+		
 	</script>
 	<style>
 		#total{
 			height:1.5em;
-			border: 1px solid #aaa;
+			border: 1px solid #777;
+			background-color:#fff;
+			margin:.5em;
 		}
 
 		input{
@@ -36,17 +49,23 @@
 		}
 
 		article{
+			background-color:#eee;
 			margin-left: auto;
 			margin-right: auto;
 			margin-top:50px;
 			width:160px;
 			border: 1px solid #aaa;
 		}
+
+		input[type='button']{
+			
+		}
 	</style>
 </head>
 <body>
 	<header></header>
 	<article>
+		<input type="button" value="clear"></button>
 		<div id="total"></div>
 		<input type="button" value="1"></button>
 		<input type="button" value="2"></button>
