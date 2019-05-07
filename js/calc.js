@@ -7,7 +7,7 @@ $(function(){
 
 	$("input[type='button']").click(function(){
 		
-		if($.inArray(this.value, opperators) && input == this.value){
+		if($.inArray(this.value, opperators) && this.value == input){
 			console.log(input +" = "+ this.value);
 		}
 		//console.log($.inArray(this.value, opperators));
@@ -19,8 +19,10 @@ $(function(){
 		}
 		
 		// back function
-
-		if(this.value=="clear"){
+		if(this.value=="back"){
+			calc = calc.slice(0,calc.length-1);
+			$("div#total").html(calc);
+		}else if(this.value=="clear"){
 			calc =""; // reset calc
 			$("div#total").html(calc);
 		}else{
