@@ -34,10 +34,13 @@ $(function(){
 
 	// add keyboard dettection to calc
 	document.addEventListener("keydown", function(event) {
-		console.log(event.which);
-		// if 48 tot 57
+		//console.log(event.which);
 		
-		// if 97 105
+		if(event.which >= 48 && event.which <= 57){ // if 48 tot 57
+			console.log("1e: " + event.which);
+		}else if(event.which >= 97 && event.which <= 105){ // if 97 105
+			console.log("2e: " + event.which);
+		}
 	});
 
 });
