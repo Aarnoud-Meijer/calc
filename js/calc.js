@@ -38,8 +38,12 @@ $(function(){
 		
 		if(event.which >= 48 && event.which <= 57){ // if 48 tot 57
 			console.log("1e: " + event.which);
+			calc += event.which;
+			$("div#total").html(calc);
 		}else if(event.which >= 97 && event.which <= 105){ // if 97 105
 			console.log("2e: " + event.which);
+			calc += event.which;
+			$("div#total").html(calc);
 		}
 	});
 
