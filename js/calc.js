@@ -1,6 +1,7 @@
 $(function(){
 	//var calc = "";
-	var calc, input;
+	var calc ="", input = ""; // werk ook
+	//var input = "";
 	var opperators = ['-', '+', '/', '*']
 
 	//opperators.indexOf(this.value);
@@ -15,7 +16,6 @@ $(function(){
 		// if(opperators.indexOf(this.value)){
 		if($.inArray(this.value, opperators)){
 			//console.log(this.value);
-			
 		}
 		
 		// back function
@@ -35,6 +35,11 @@ $(function(){
 
 	$('input[type="submit"]').click(function(){
 			$("div#total").html(eval(calc));
+	});
+
+	// add keyboard dettection to calc
+	document.addEventListener("keydown", function(event) {
+		console.log(event.which);
 	});
 
 });
